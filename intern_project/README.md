@@ -18,7 +18,7 @@ lastly, Views are been created as '**vw_statewise_cases**' for india covid cases
 In the AWS platform, there is schedule created for the exisitng lamda function which runs for every 12 hours.
 
 ## **FlowChart**
-![flowchart](FlowChart.jpg)
+![flowchart](flowchart/Flow_Chart.jpg)
 
 ## **Technical Stack:**
 1. REST API
