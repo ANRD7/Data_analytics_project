@@ -1,0 +1,39 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: india covid data and us covid data pulled and loaded in s3
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 3
+    MemorySize: 128
+
+Resources:
+  IndiaUSCovidFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      FunctionName: India-US-covid
+      Description: Pull data from India covid cases,USA covid cases REST API and load into s3.
+      CodeUri: hello_world/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Architectures:
+        - x86_64
+      Role: arn:aws:iam::072843151618:role/Lamdas3fullaccess
+      Tracing: Active
+      MemorySize: 10240
+      Timeout: 900
+      Layers: 
+        - "arn:aws:lambda:us-east-2:072843151618:layer:requests:4"
+        - "arn:aws:lambda:us-east-2:072843151618:layer:pandaspy:2"
+        - "arn:aws:lambda:us-east-2:072843151618:layer:mysql_connector:1"
+        - "arn:aws:lambda:us-east-2:072843151618:layer:s3fs_1:1"
+      Environment:
+        Variables:
+          log_level: "ERROR"
+
+Outputs:
+  IndiaUSCovidFunction:
+    Description: "india covid data and us covid data pulled and loaded in AWS S3"
+    Value: !GetAtt IndiaUSCovidFunction.Arn
+ 

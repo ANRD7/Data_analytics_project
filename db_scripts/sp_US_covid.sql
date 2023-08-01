@@ -1,0 +1,58 @@
+-- truncate and moving data from staging_schema.stg_US_covid to BIDatamart.US_covid ---
+create procedure BIDatamart.sp_US_covid()
+begin
+	truncate table BIDatamart.US_covid;
+	insert into BIDatamart.US_covid
+	(	    Record_date,
+    		states,
+    		positive,
+    		negative,
+   	 		pending,
+    		hospitalizedCurrently,
+    		hospitalizedCumulative,
+    		inIcuCurrently,
+    		inIcuCumulative,
+    		onVentilatorCurrently,
+    		onVentilatorCumulative,
+    		dateChecked,
+    		death,
+    		hospitalized,
+    		totalTestResults,
+    		lastModified,
+    		recovered,
+    		total,
+    		posNeg,
+    		deathIncrease,
+    		hospitalizedIncrease,
+    		negativeIncrease,
+    		positiveIncrease,
+    		totalTestResultsIncrease,
+    		given_hash
+	)
+	 select Record_date,
+    	 states,
+    	 positive,
+    	 negative,
+   	 	 pending,
+    	 hospitalizedCurrently,
+    	 hospitalizedCumulative,
+    	 inIcuCurrently,
+    	 inIcuCumulative,
+    	 onVentilatorCurrently,
+    	 onVentilatorCumulative,
+    	 dateChecked,
+    	 death,
+    	 hospitalized,
+    	 totalTestResults,
+    	 lastModified,
+    	 recovered,
+    	 total,
+    	 posNeg,
+    	 deathIncrease,
+    	 hospitalizedIncrease,
+    	 negativeIncrease,
+    	 positiveIncrease,
+    	 totalTestResultsIncrease,
+    	 given_hash
+      from staging_schema.stg_US_covid;
+end;
