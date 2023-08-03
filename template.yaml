@@ -14,7 +14,7 @@ Resources:
     Properties:
       FunctionName: India-US-covid
       Description: Pull data from India covid cases,USA covid cases REST API and load into s3.
-      CodeUri: hello_world/
+      CodeUri: src_code/
       Handler: app.lambda_handler
       Runtime: python3.9
       Architectures:
