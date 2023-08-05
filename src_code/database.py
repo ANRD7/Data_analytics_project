@@ -15,6 +15,7 @@ class Db:
     
     def india_covid_s3_to_stg(connection,cursor,filename):
         f_e=pd.read_csv(filename)
+        df.drop_duplicates(inplace=True)
         data=json.loads(f_e.to_json(orient='records'))
         cursor.execute("truncate table staging_schema.stg_india_covid;")
         connection.commit()
