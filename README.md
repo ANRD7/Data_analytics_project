@@ -17,7 +17,17 @@ lastly, Views are been created as '**vw_statewise_cases**' for india covid cases
 ## **AWS EventBridge**
 In the AWS platform, there is schedule created for the exisitng lamda function which runs for every 12 hours.
 
+## **PowerBI Dashboard**
+In this the tables present in the BIDatamart database(only india covid cases table) is converted into diffrent graphs according to diffrent scenarios.(can refer to the pdf file in 'powerBI_dashboard folder')
+
+Below is the PowerBI Dashboard for India covid cases:
+
+![Dashboard_pic](powerBI_dashboard/Dashboard_pic.png)
+
 ## **FlowChart**
+
+This is the flowchart of the project
+
 ![flowchart](flowchart/Flow_Chart.jpg)
 
 ## **Technical Stack:**
