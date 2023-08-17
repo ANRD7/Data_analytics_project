@@ -47,5 +47,6 @@ This is the flowchart of the project
 14. AWS IAM
 15. AWS Cloudformation
 16. AWS Eventbridge Scheduler
+17. PowerBI
 
 
