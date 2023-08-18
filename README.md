@@ -1,4 +1,4 @@
-# **Project based in data analysis using Python and AWS platform**
+# **Project based in data analysis of covid-19 data of india(2020-2021) using Python and AWS platform**
 
 ## **Project Description :**
 ### **Storing in AWS S3 Bucket and using AWS lambda**
