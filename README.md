@@ -1,10 +1,13 @@
 # **Project based in data analysis using Python and AWS platform**
 
 ## **Project Description :**
-### *Storing in AWS S3 Bucket*
+### **Storing in AWS S3 Bucket and using AWS lambda**
 The REST API's were given for the following aspects are: india covid cases REST API and USA covid REST API. Firstly, we need to convert the ".json" format(REST API's) into ".CSV" format using Python and that csv data for both india and usa covid cases should be stored in AWS S3.
 
+Before doing this, we need to configure AWS lambda in our local system using AWS SAM and AWS CLI.Then we need to create a 'test case' in lambda function in AWS console(the same code which we will run on the local system) for testing purposes and for AWS Eventscheduler.
+
 For USA Covid REST API, there should be provided a ceratin date in url and the data will be shown according to the date the user has given. The date should be provided in the events/event.json file in the '**changedate**' section.(YYYYMMDD)
+
 
 ### *Using Mysql to show the data in a database*
 After stroing the data in S3 bucket(AWS), we have to create two schemas i.e '**staging_schema**' and '**BIDatamart**' using SQL scripts. In those schemas, we need to create tables tables of india and usa covid cases for each respectively.
@@ -15,7 +18,7 @@ In case of '**BIDatamart**' the tables created are '**india_covid**' and '**US_c
 lastly, Views are been created as '**vw_statewise_cases**' for india covid cases which displays the total confirmed,recovered and deceased.
 
 ## **AWS EventBridge**
-In the AWS platform, there is schedule created for the exisitng lamda function which runs for every 12 hours.
+In the AWS platform, there is schedule created for the exisitng lambda function ('testcase') which runs for every 12 hours (depends on user's choice).
 
 ## **PowerBI Dashboard**
 In this the tables present in the BIDatamart database(only india covid cases table) is converted into diffrent graphs according to diffrent scenarios.(can refer to the pdf file in 'powerBI_dashboard folder')
